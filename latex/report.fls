@@ -1,6 +1,6 @@
-PWD g:\Other computers\My Laptop\UCSD\DSC\DSC148\Project\Loan-prediction\latex
+PWD g:\Other computers\My Laptop\UCSD\DSC\DSC148\Project\Loan-prediction\loan-predictions\latex
 INPUT C:\Users\limja\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT g:\Other computers\My Laptop\UCSD\DSC\DSC148\Project\Loan-prediction\latex\report.tex
+INPUT g:\Other computers\My Laptop\UCSD\DSC\DSC148\Project\Loan-prediction\loan-predictions\latex\report.tex
 OUTPUT report.log
 INPUT C:\Users\limja\AppData\Local\Programs\MiKTeX\tex\latex\acmart\acmart.cls
 INPUT C:\Users\limja\AppData\Local\Programs\MiKTeX\tex\latex\acmart\acmart.cls
