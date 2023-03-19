@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{zeros} \PYG{o}{=} \PYG{n}{train}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}
+    \PYG{n}{train}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Loan Status\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{0}
+    \PYG{p}{]}
+\PYG{n}{ones} \PYG{o}{=}  \PYG{n}{train}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}
+    \PYG{n}{train}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Loan Status\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{1}
+    \PYG{p}{]}
+
+\PYG{n}{balanced} \PYG{o}{=} \PYG{n}{zeros}\PYG{o}{.}\PYG{n}{sample}\PYG{p}{(}\PYG{n}{ones}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+\PYG{n}{balanced\PYGZus{}df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(}
+    \PYG{p}{[}\PYG{n}{ones}\PYG{p}{,} \PYG{n}{balanced}\PYG{p}{],} \PYG{n}{axis} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{p}{)}\PYG{o}{.}\PYG{n}{reset\PYGZus{}index}\PYG{p}{()}
+\PYG{n}{balanced\PYGZus{}df} \PYG{o}{=} \PYG{n}{balanced\PYGZus{}df}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}
+    \PYG{n}{columns} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}index\PYGZdq{}}\PYG{p}{]}
+    \PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{grade} \PYG{o}{=} \PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Grade\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{()}
+\PYG{n}{subgrade} \PYG{o}{=} \PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Sub Grade\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{()}
+\PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}GradeSubGrade\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Grade\PYGZdq{}}\PYG{p}{]}
+    \PYG{o}{+} \PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Sub Grade\PYGZdq{}}\PYG{p}{]}
+\PYG{n}{data\PYGZus{}clean} \PYG{o}{=} \PYG{n}{data\PYGZus{}clean}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}
+    \PYG{n}{columns}\PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Grade\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Sub Grade\PYGZdq{}}\PYG{p}{]}
+\PYG{p}{)}
+\PYG{n}{features} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{grade}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n}{subgrade}\PYG{p}{:}
+        \PYG{n}{lst} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{p}{]}
+        \PYG{n}{features}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lst}\PYG{p}{)}
+\PYG{n}{features} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{unique}\PYG{p}{(}\PYG{n}{features}\PYG{p}{)}
+
+\PYG{n}{dicta} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{features}\PYG{p}{:}
+    \PYG{n}{dicta}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{k}
+    \PYG{n}{k} \PYG{o}{=} \PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}
+
+\PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}GradeSubGrade\PYGZdq{}}\PYG{p}{]} \PYG{o}{=}
+    \PYG{n}{data\PYGZus{}clean}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}GradeSubGrade\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{n}{dicta}\PYG{p}{)}
+\end{Verbatim}

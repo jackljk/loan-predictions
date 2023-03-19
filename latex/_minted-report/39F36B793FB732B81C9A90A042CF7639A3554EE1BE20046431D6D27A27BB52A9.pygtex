@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ct} \PYG{o}{=} \PYG{n}{ColumnTransformer}\PYG{p}{([}
+\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}one\PYGZhy{}hot\PYGZdq{}}\PYG{p}{,} \PYG{n}{OneHotEncoder}\PYG{p}{(}\PYG{n}{handle\PYGZus{}unknown}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}ignore\PYGZdq{}}\PYG{p}{),}
+\PYG{p}{[}
+    \PYG{l+s+s2}{\PYGZdq{}Employment Duration\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}Verification Status\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}Application Type\PYGZdq{}}
+\PYG{p}{])])}
+\end{Verbatim}

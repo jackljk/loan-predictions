@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}Std\PYGZhy{}scale\PYGZdq{}}\PYG{p}{,} \PYG{n}{StandardScaler}\PYG{p}{(),}
+         \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Total Collection Amount\PYGZsq{}}\PYG{p}{,}
+          \PYG{l+s+s1}{\PYGZsq{}Total Received Late Fee\PYGZsq{}}\PYG{p}{]}
+    \PYG{p}{)}
+\PYG{p}{],} \PYG{n}{remainder}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}passthrough\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

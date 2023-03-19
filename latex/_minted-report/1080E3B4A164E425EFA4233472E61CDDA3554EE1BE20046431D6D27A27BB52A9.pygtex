@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{preproc} \PYG{o}{=} \PYG{n}{ColumnTransformer}\PYG{p}{([}
+\PYG{p}{(}
+    \PYG{l+s+s2}{\PYGZdq{}One\PYGZhy{}hot\PYGZdq{}}\PYG{p}{,} \PYG{n}{OneHotEncoder}\PYG{p}{(),}
+    \PYG{p}{[}
+     \PYG{l+s+s2}{\PYGZdq{}Employment Duration\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Verification Status\PYGZdq{}}\PYG{p}{,}
+     \PYG{l+s+s2}{\PYGZdq{}Application Type\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Delinquency \PYGZhy{} two years\PYGZdq{}}\PYG{p}{,}
+     \PYG{l+s+s2}{\PYGZdq{}Collection 12 months Medical\PYGZdq{}}
+    \PYG{p}{]}
+\PYG{p}{)}
+\end{Verbatim}

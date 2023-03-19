@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prediction Result</title>
+</head>
+<style>
+  body {
+    background: linear-gradient(to bottom, #C6E2FF, #b6d9fd, #C6E2FF);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Arial";
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  .display {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 30vh;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+</style>
+
+<body>
+  <div class="display">
+    <h1>Prediction Result</h1>
+    <p>The model has predicted that your loan is {{ prediction }}.</p>
+    <button onclick="window.location.href = '/';">Go back</button>
+  </div>
+</body>
+
+</html>

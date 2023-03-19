@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Predictions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <div class='form'>
+    <h1>Predict your loan approval</h1>
+    <form action="/predict" method="post">
+      <div class="input-div">
+
+        <div class="form-group">
+          <label for="loan_amount">Loan Amount:</label>
+          <input type="float" id="loan_amount" name="loan_amount"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="funded_amount_investor">Funded Amount Investor:</label>
+          <input type="float" id="funded_amount_investor" name="funded_amount_investor"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Grade:</label>
+          <select id="grade" name="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subgrade">Subgrade:</label>
+          <select id="subgrade" name="subgrade">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="B4">B4</option>
+            <option value="B5">B5</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="C3">C3</option>
+            <option value="C4">C4</option>
+            <option value="C5">C5</option>
+            <option value="D1">D1</option>
+            <option value="D2">D2</option>
+            <option value="D3">D3</option>
+            <option value="D4">D4</option>
+            <option value="D5">D5</option>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="E3">E3</option>
+            <option value="E4">E4</option>
+            <option value="E5">E5</option>
+            <option value="F1">F1</option>
+            <option value="F2">F2</option>
+            <option value="F3">F3</option>
+            <option value="F4">F4</option>
+            <option value="F5">F5</option>
+            <option value="G1">G1</option>
+            <option value="G2">G2</option>
+            <option value="G3">G3</option>
+            <option value="G4">G4</option>
+            <option value="G5">G5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="interest_rate">Interest Rate:</label>
+          <input type="float" id="interest_rate" name="interest_rate"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="employment_duration">Employment Duration:</label>
+          <select id="employment_duration" name="employment_duration">
+            <option value="OWN">OWN</option>
+            <option value="MORTGAGE">MORTGAGE</option>
+            <option value="RENT">RENT</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="home_ownership">Home Ownership:</label>
+          <input type="float" id="home_ownership" name="home_ownership"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="verification_status">Verification Status:</label>
+          <select id="verification_status" name="verification_status">
+            <option value="Source Verified">Source Verified</option>
+            <option value="Verified">Verified</option>
+            <option value="Not Verified">Not Verified</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="debit_to_income">Debit to Income:</label>
+          <input type="float" id="debit_to_income" name="debit_to_income"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="delinquency_two_years">Delinquency - two years:</label>
+          <input type="int" id="delinquency_two_years" name="delinquency_two_years"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="public_record">Public Record:</label>
+          <input type="int" id="public_record" name="public_record"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="total_received_interest">Total Received Interest:</label>
+          <input type="float" id="total_received_interest" name="total_received_interest"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="total_received_late_fee">Total Received Late Fee:</label>
+          <input type="float" id="total_received_late_fee" name="total_received_late_fee"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="collection_12_months_medical">Collection 12 months Medical:</label>
+          <input type="int" id="collection_12_months_medical" name="collection_12_months_medical"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="application_type">Application Type:</label>
+          <select id="application_type" name="application_type">
+            <option value="INDIVIDUAL">Individual</option>
+            <option value="JOINT">Joint App</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="total_collection_amount">Total Collection Amount:</label>
+          <input type="int" id="total_collection_amount" name="total_collection_amount"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="total_current_balance">Total Current Balance:</label>
+          <input type="int" id="total_current_balance" name="total_current_balance"><br><br>
+        </div>
+
+        <div class="form-group">
+          <label for="total_revolving_credit_limit">Total Revolving Credit Limit:</label>
+          <input type="int" id="total_revolving_credit_limit" name="total_revolving_credit_limit"><br><br>
+        </div>
+      </div>
+      <div class="center"><input type="submit" value="Submit" class="submit"></div>
+    </form>
+  </div>
+</body>
+
+</html>

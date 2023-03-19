@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{X} \PYG{o}{=} \PYG{n}{balanced\PYGZus{}df}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}
+    \PYG{l+s+s1}{\PYGZsq{}Loan Status\PYGZsq{}}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}
+\PYG{p}{)}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{balanced\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Loan Status\PYGZsq{}}\PYG{p}{]}
+
+\PYG{n}{X\PYGZus{}train}\PYG{p}{,} \PYG{n}{X\PYGZus{}test}\PYG{p}{,} \PYG{n}{y\PYGZus{}train}\PYG{p}{,} \PYG{n}{y\PYGZus{}test} \PYG{o}{=}
+\PYG{n}{train\PYGZus{}test\PYGZus{}split}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{test\PYGZus{}size}\PYG{o}{=}\PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{42}\PYG{p}{)}
+
+\PYG{n}{rf\PYGZus{}pipe} \PYG{o}{=} \PYG{n}{Pipeline}\PYG{p}{([}
+\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}preprocessing\PYGZdq{}}\PYG{p}{,} \PYG{n}{preproc}\PYG{p}{),}
+\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}rf\PYGZdq{}}\PYG{p}{,} \PYG{n}{rf}\PYG{p}{)}
+\PYG{p}{])}
+
+\PYG{n}{param\PYGZus{}grid} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+\PYG{l+s+s1}{\PYGZsq{}rf\PYGZus{}\PYGZus{}n\PYGZus{}estimators\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{],}
+\PYG{l+s+s1}{\PYGZsq{}rf\PYGZus{}\PYGZus{}max\PYGZus{}depth\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{],}
+\PYG{l+s+s1}{\PYGZsq{}rf\PYGZus{}\PYGZus{}min\PYGZus{}samples\PYGZus{}split\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{],}
+\PYG{l+s+s1}{\PYGZsq{}rf\PYGZus{}\PYGZus{}class\PYGZus{}weight\PYGZsq{}} \PYG{p}{:} \PYG{p}{[}
+    \PYG{l+s+s2}{\PYGZdq{}balanced\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}balanced\PYGZus{}subsample\PYGZdq{}}\PYG{p}{,}
+    \PYG{k+kc}{None}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{grid\PYGZus{}search\PYGZus{}rf} \PYG{o}{=} \PYG{n}{GridSearchCV}\PYG{p}{(}\PYG{n}{rf\PYGZus{}pipe}\PYG{p}{,}
+    \PYG{n}{param\PYGZus{}grid}\PYG{o}{=}\PYG{n}{param\PYGZus{}grid}\PYG{p}{,} \PYG{n}{cv}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,}
+    \PYG{n}{scoring}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}f1\PYGZsq{}}\PYG{p}{,} \PYG{n}{n\PYGZus{}jobs}\PYG{o}{=\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{verbose}\PYG{o}{=}\PYG{l+m+mi}{1}
+    \PYG{p}{)}
+
+\PYG{n}{grid\PYGZus{}search\PYGZus{}rf}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{X\PYGZus{}train}\PYG{p}{,} \PYG{n}{y\PYGZus{}train}\PYG{p}{)}
+\end{Verbatim}
